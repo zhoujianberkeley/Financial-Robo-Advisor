@@ -12,8 +12,8 @@ def get_temp_data(year, quarter):
 	return df1
 
 count = 0
-for i in range(2016, 2017):
-	for j in range(1, 3):
+for i in range(2016, 2019):
+	for j in range(1, 5):
 		if count == 0:
 			df2 = get_temp_data(i, j)
 			df2['time_point'] = Closest_TraDt(i, j)
@@ -25,3 +25,4 @@ for i in range(2016, 2017):
 		count += 1
 
 print (df2)
+df2.to_csv('stock_data.csv', encoding = 'utf-8')
