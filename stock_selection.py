@@ -10,12 +10,14 @@ from sklearn.model_selection import GridSearchCV
 from sklearn.ensemble import RandomForestClassifier
 from sklearn.datasets import make_classification
 
+from adjust_start_date import Closest_TraDt_2
+
 Model_Rf = RandomForestClassifier()
 
-test_less_row = 100
+test_less_row = 40
 
 
-pd.set_option('display.max_columns', None)
+#pd.set_option('display.max_columns', None)
 
 year_list = range(2017, 2018)
 quarter_list = range(1, 2)
@@ -49,8 +51,10 @@ print (temp_row, temp_col)
 temp_row = test_less_row ##################################################################
 for row in range(0, temp_row):
 	print (row)
-	temp_stock = df.iloc[ row, 0 ]
-	temp_df = ts.get_hist_data( temp_stock, start = start_list[quarter], end = end_list[quarter] )
+	temp_stock_int = df.iloc[ row, 1 ]
+	temp_stock = "%06d" % temp_stock_int
+	temp_date = df.iloc[ row, -2 ]
+	temp_df = ts.get_hist_data( temp_stock, start = temp_date, end = Closest_TraDt_2(temp_date) )
 	#print (temp_df)
 	temp_row2 = -1
 	temp_col2 = -1
@@ -62,7 +66,7 @@ for row in range(0, temp_row):
 df.dropna( axis=0, how='any', thresh=None, subset=None, inplace=True )
 ( temp_row, temp_col ) = df.shape
 for i in range(0, temp_row):
-	for j in range(2, temp_col-1):
+	for j in range(3, temp_col-1):
 		x_temp.append(df.iloc[i, j])
 	x.append( x_temp )
 	y.append( df.iloc[i, -1] )
@@ -93,14 +97,13 @@ model = SVR()
 grid_search = GridSearchCV(model, param_grid, scoring = 'neg_mean_squared_error', n_jobs = -1, cv = kfold)
 y_train = np.zeros(len(y_train))
 grid_result = grid_search.fit(x_train, y_train)
-print("Best: %f using %s" % (grid_result.best_score_,grid_search.best_params_))
+print("Best: %f using %s" % ( grid_result.best_score_, grid_search.best_params_ ))
 
-'''
+model = SVR(C = grid_search.best_params_)
 model.fit(x_train, y_train)
 y_predict = model.predict(x_test)
 print (y_test)
 print (y_predict)
-'''
 
 ###################################################################
 row_choosing_stock = -1
