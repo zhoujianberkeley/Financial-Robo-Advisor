@@ -8,17 +8,26 @@ from sklearn.model_selection import train_test_split
 
 pd.set_option('display.max_columns', None)
 
-year_list = range(2000, 2018)
-quarter_list = range(1, 2)
-start_list = ['2017-04-17', '2017-07-17', '2017-10-17', '2018-01-31']
-end_list = ['2018-04-17', '2018-07-17', '2018-10-17', '2019-01-31']
 
+pd.set_option('display.max_columns', None)
+
+year_list = range(2000, 2018)
+quarter_list = range(4)
+
+# for i in year_list:
+# start_list = ['2017-04-17', '2017-07-17', '2017-10-17', '2018-01-31']
+# end_list = ['2018-04-17', '2018-07-17', '2018-10-17', '2019-01-31']
+#
 temp_row = -1
 temp_col = -1
 
 x = []
 y = []
 x_temp = []
+
+
+Qua_Dict = {1:'-04-27', 2:'-07-17', 3:'-10-17',4:'-04-17'}
+
 
 for year in year_list:
 	for quarter in quarter_list:
