@@ -4,16 +4,18 @@ from adjust_start_date import Closest_TraDt
 
 def get_temp_data(year, quarter):
 	df1 = ts.get_report_data(year, quarter)
-	df1 = df1.merge(ts.get_profit_data(year, quarter), how = 'inner', on = 'code')
-	df1 = df1.merge(ts.get_operation_data(year, quarter), how = 'inner', on = 'code')
-	df1 = df1.merge(ts.get_growth_data(year, quarter), how = 'inner', on = 'code')
-	df1 = df1.merge(ts.get_debtpaying_data(year, quarter), how = 'inner', on = 'code')
-	df1 = df1.merge(ts.get_cashflow_data(year, quarter), how = 'inner', on = 'code')
+	df1 = df1.merge(ts.get_profit_data(year, quarter), how = 'inner', on = ['code', 'name'])
+	df1 = df1.merge(ts.get_operation_data(year, quarter), how = 'inner', on = ['code', 'name'])
+	df1 = df1.merge(ts.get_growth_data(year, quarter), how = 'inner', on = ['code', 'name'])
+	df1 = df1.merge(ts.get_debtpaying_data(year, quarter), how = 'inner', on = ['code', 'name'])
+	df1 = df1.merge(ts.get_cashflow_data(year, quarter), how = 'inner', on = ['code', 'name'])
 	return df1
 
 count = 0
 for i in range(2016, 2019):
 	for j in range(1, 5):
+		print (i)
+		print (j)
 		if count == 0:
 			df2 = get_temp_data(i, j)
 			df2['time_point'] = Closest_TraDt(i, j)
