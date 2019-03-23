@@ -1,14 +1,14 @@
 import tushare as ts 
 import pandas as pd 
-import numpy as np 
-from sklearn.model_selection import train_test_split
 from sklearn.svm import SVR
 from sklearn.preprocessing import MinMaxScaler
+import numpy as np
+from sklearn.model_selection import train_test_split
 
 
 pd.set_option('display.max_columns', None)
 
-year_list = range(2017, 2018)
+year_list = range(2000, 2018)
 quarter_list = range(1, 2)
 start_list = ['2017-04-17', '2017-07-17', '2017-10-17', '2018-01-31']
 end_list = ['2018-04-17', '2018-07-17', '2018-10-17', '2019-01-31']
