@@ -1,12 +1,16 @@
 import tushare as ts 
 import pandas as pd 
+import numpy as np
+
 from sklearn.svm import SVR
 from sklearn.preprocessing import MinMaxScaler
-import numpy as np
 from sklearn.model_selection import train_test_split
+from sklearn.model_selection import StratifiedKFold
+from sklearn.model_selection import GridSearchCV
+from sklearn.ensemble import RandomForestClassifier
+from sklearn.datasets import make_classification
 
-
-pd.set_option('display.max_columns', None)
+Model_Rf = RandomForestClassifier()
 
 
 pd.set_option('display.max_columns', None)
@@ -14,10 +18,6 @@ pd.set_option('display.max_columns', None)
 year_list = range(2000, 2018)
 quarter_list = range(4)
 
-# for i in year_list:
-# start_list = ['2017-04-17', '2017-07-17', '2017-10-17', '2018-01-31']
-# end_list = ['2018-04-17', '2018-07-17', '2018-10-17', '2019-01-31']
-#
 temp_row = -1
 temp_col = -1
 
@@ -81,13 +81,22 @@ print (y_train)
 print ('y_test =')
 print (y_test)
 
-
+cv = StratifiedKFold(n_splits= 5, shuffle= True)
+C = range(0, 5, 0.5)
+param_grid = dict(C = C)
+kfold = StratifiedKFold(n_splits = 5, shuffle = True, random_state = 7)
 
 model = SVR()
+grid_search = GridSearchCV(model, param_grid, scoring = 'neg_mean_squared_error', n_jobs = -1, cv = kfold)
+grid_result = grid_search.fit(x_train, y_train)
+print("Best: %f using %s" % (grid_result.best_score_,grid_search.best_params_))
+
+'''
 model.fit(x_train, y_train)
 y_predict = model.predict(x_test)
 print (y_test)
 print (y_predict)
+'''
 
 ###################################################################
 row_choosing_stock = -1
