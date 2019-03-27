@@ -1,12 +1,12 @@
 import requests
-from UA import agents
+from snowball_crawling.UA import agents
 import random
 import time
 import json
-from db import StockMongo
+from snowball_crawling.db import StockMongo
 from lxml import html
 import multiprocessing
-from thread_pool import ThreadPool  # 自己写的线程池
+from snowball_crawling.thread_pool import ThreadPool  # 自己写的线程池
 
 headers = {
     'User-Agent': random.choice(agents)

@@ -1,12 +1,12 @@
 '''爬虫要先执行该段代码，获取所有股票代码，再根据代码获取所有股票评论'''
 
 import requests
-from UA import agents
+from snowball_crawling.UA import agents
 import time
 import random
 from multiprocessing import Pool
 import json
-from db import StockMongo
+from snowball_crawling.db import StockMongo
 
 
 '''爬虫的第一步，要先爬取的股票代码'''
