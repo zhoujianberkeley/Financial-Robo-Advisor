@@ -8,9 +8,8 @@ from sklearn.model_selection import train_test_split
 from sklearn.model_selection import StratifiedKFold
 from sklearn.model_selection import GridSearchCV
 from sklearn.ensemble import RandomForestClassifier
-from sklearn.datasets import make_classification
 
-from adjust_start_date import Closest_TraDt_2
+from selection_and_timing.adjust_start_date import Closest_TraDt_2
 
 Model_Rf = RandomForestClassifier()
 
@@ -35,23 +34,37 @@ x_temp = []
 Qua_Dict = {1:'-04-27', 2:'-07-17', 3:'-10-17',4:'-04-17'}
 
 
-df = pd.read_csv('stock_data.csv')#ts.get_profit_data(year, quarter)
+df = pd.read_csv('selection_and_timing/stock_data.csv', converters={'code': '{:0>6}'.format}) #ts.get_profit_data(year, quarter)
 print ( df.shape )
-print ( df )
+print ('1',df )
+
+def drop_na(tol_na, dataframe):
+	'''
+	如果一个指标超过N家公司都没有数据，就把该指标删除
+	:param tol_na: tol_na = 20  # 一个指标可以最多容忍的tol_na个公司没有数据，否则drop掉
+	:param dataframe:原始df
+	:return:删了特定指标的df
+	'''
+	drop_list = list(df.isna().sum()[df.isna().sum() >= tol_na].index)
+	dataframe = dataframe.drop(drop_list, axis = 1)
+	return dataframe
+
+df = drop_na(20, df)
 df.dropna( axis=0, how='any', thresh=None, subset=None, inplace=True )
-print ( df )
+print ('2', df )
 df.sort_values( by="code" , ascending=True, inplace=True )
-print ( df )
+print ('3', df )
 df.drop_duplicates( ['code'], inplace = True )
-print ( df )
+print ('4', df )
 df['yield'] = np.nan
-print ( df )
+print ('5', df )
 ( temp_row, temp_col ) = df.shape
 print (temp_row, temp_col)
 temp_row = test_less_row ##################################################################
 for row in range(0, temp_row):
-	print (row)
-	temp_stock_int = df.iloc[ row, 1 ]
+	print ('row:',row)
+	print('dfshape', df.shape)
+	temp_stock_int = int(df.iloc[ row, 1 ])
 	temp_stock = "%06d" % temp_stock_int
 	temp_date = df.iloc[ row, -2 ]
 	temp_df = ts.get_hist_data( temp_stock, start = temp_date, end = Closest_TraDt_2(temp_date) )

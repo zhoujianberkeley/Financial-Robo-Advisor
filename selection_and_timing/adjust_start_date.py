@@ -32,5 +32,6 @@ def Closest_TraDt_2(tp):
         test += str(date)
     return test
 
-print(Closest_TraDt_2('2016-07-17'))
+assert Closest_TraDt_2('2016-07-17') == '2017-07-17'
+print('adjsut start date sucessful')
 
