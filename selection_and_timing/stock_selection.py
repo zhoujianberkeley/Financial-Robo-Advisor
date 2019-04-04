@@ -14,7 +14,7 @@ from selection_and_timing.data_merge import get_temp_data
 
 Model_Rf = RandomForestClassifier()
 
-test_less_row = 15
+test_less_row = 25
 
 
 #pd.set_option('display.max_columns', None)
@@ -154,8 +154,9 @@ def choosing_stock(the_year, the_quarter):
 	data_choosing_stock = get_temp_data(the_year, the_quarter)
 	data_choosing_stock.dropna( axis=0, how='any', thresh=None, subset=None, inplace=True )
 	data_choosing_stock.sort_values( by="code" , ascending=True, inplace=True )
-	data_choosing_stock.drop_duplicates( ['code','timepoint'], inplace = True )
+	data_choosing_stock.drop_duplicates( ['code'], inplace = True )
 	data_choosing_stock['yield'] = np.nan
+	print(data_choosing_stock.shape)
 	data_choosing_stock = assert_allNumber(data_choosing_stock)
 	( row_choosing_stock, col_choosing_stock ) = data_choosing_stock.shape
 	row_choosing_stock = test_less_row ######################################################
