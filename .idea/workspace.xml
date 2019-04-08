@@ -183,7 +183,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python.crawl_xueqiu">
+  <component name="RunManager" selected="Python.stock_selection">
     <configuration name="adjust_start_date" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="Difficult-Project" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -254,8 +254,8 @@
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Python.crawl_xueqiu" />
         <item itemvalue="Python.stock_selection" />
+        <item itemvalue="Python.crawl_xueqiu" />
         <item itemvalue="Python.adjust_start_date" />
       </list>
     </recent_temporary>
