@@ -9,14 +9,11 @@ col = -1
 
 def get_temp_data(year, quarter):
 	df1 = ts.get_report_data(year, quarter)
-	print (1)
-	print (df1)
+	print (1,"\n", df1)
 	df1 = df1.merge(ts.get_profit_data(year, quarter), how = 'inner', on = ['code', 'name'])
-	print (2)
-	print (df1)
+	print (2,"\n", df1)
 	df1 = df1.merge(ts.get_operation_data(year, quarter), how = 'inner', on = ['code', 'name'])
-	print (3)
-	print (df1)
+	print (3, "n", df1)
 	df1 = df1.merge(ts.get_growth_data(year, quarter), how = 'inner', on = ['code', 'name'])
 	print (4)
 	print (df1)

@@ -48,9 +48,9 @@ def Drop_NA(tol_na, dataframe):
 	'''
 	drop_list = list(df.isna().sum()[df.isna().sum() >= tol_na].index)
 	dataframe = dataframe.drop(drop_list, axis = 1)
-	return dataframe
+	return dataframe, drop_list
 
-df = Drop_NA(20, df)
+df, drop_list = Drop_NA(20, df)
 
 df.dropna( axis=0, how='any', thresh=None, subset=None, inplace=True )
 print ('drop na后的shape', df.shape)
@@ -157,6 +157,7 @@ def choosing_stock(the_year, the_quarter):
 	x_temp_choosing_stock = []
 	print (the_year, the_quarter)
 	data_choosing_stock = get_temp_data(the_year, the_quarter)
+	data_choosing_stock = data_choosing_stock.drop(drop_list, axis = 1)  #把训练时扔掉的column扔掉
 	data_choosing_stock.dropna( axis=0, how='any', thresh=None, subset=None, inplace=True )
 	data_choosing_stock.sort_values( by="code" , ascending=True, inplace=True )
 	data_choosing_stock.drop_duplicates( ['code'], inplace = True )
@@ -172,9 +173,10 @@ def choosing_stock(the_year, the_quarter):
 			x_temp_choosing_stock.append(data_choosing_stock.iloc[the_row, the_col])
 
 		print('x temp shape 1', len(x_temp_choosing_stock))
-		x_choosing_stock.extend(x_temp_choosing_stock)
+		x_choosing_stock.append(x_temp_choosing_stock)
 
 		print('x shape 2', len(x_choosing_stock))
+		print('x_choosing_stock', x_choosing_stock)
 
 		x_choosing_stock_new = MinMax.transform(x_choosing_stock)
 		y_choosing_stock_predict = model.predict(x_choosing_stock_new)
@@ -183,7 +185,7 @@ def choosing_stock(the_year, the_quarter):
 		data_choosing_stock.iloc[the_row, -1] = y_choosing_stock_predict
 
 	data_choosing_stock.sort_values( by="yield", ascending=False, inplace=True )
-	stock_list = data_choosing_stock[['code', 'name', 'yield']]
+	stock_list = data_choosing_stock[['code','yield']]
 
 	print ('stock_list')
 	print (stock_list)
