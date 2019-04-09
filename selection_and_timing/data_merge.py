@@ -1,6 +1,6 @@
 import pandas as pd 
 import tushare as ts 
-from selection_and_timing.adjust_start_date import Closest_TraDt
+from adjust_start_date import Closest_TraDt
 
 get_data = 0
 

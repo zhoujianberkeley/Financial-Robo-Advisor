@@ -9,8 +9,8 @@ from sklearn.model_selection import StratifiedKFold
 from sklearn.model_selection import GridSearchCV
 from sklearn.ensemble import RandomForestClassifier
 
-from selection_and_timing.adjust_start_date import Closest_TraDt_2
-from selection_and_timing.data_merge import get_temp_data
+from adjust_start_date import Closest_TraDt_2
+from data_merge import get_temp_data
 
 Model_Rf = RandomForestClassifier()
 
@@ -35,7 +35,7 @@ x_temp = []
 Qua_Dict = {1:'-04-27', 2:'-07-17', 3:'-10-17',4:'-04-17'}
 
 
-df = pd.read_csv('selection_and_timing/stock_data.csv', converters={'code': '{:0>6}'.format}) #ts.get_profit_data(year, quarter)
+df = pd.read_csv('stock_data.csv', converters={'code': '{:0>6}'.format}) #ts.get_profit_data(year, quarter)
 print ('公司数', df.shape[0],'/n指标数', df.shape[1])
 print ('1', df.shape)
 
@@ -126,8 +126,8 @@ print (y_train)
 print ('y_test =')
 print (y_test)
 
-
-
+#################################################     grid_serach module     ###################################
+'''
 cv = StratifiedKFold(n_splits= 5, shuffle= True)
 C = np.arange(0.5, 5, 0.5)
 param_grid = dict(C = C)
@@ -138,9 +138,11 @@ grid_search = GridSearchCV(model, param_grid, scoring = 'neg_mean_squared_error'
 y_train = np.zeros(len(y_train))
 grid_result = grid_search.fit(x_train, y_train)
 print("Best: %f using %s" % ( grid_result.best_score_, grid_search.best_params_ ))
+'''
+#################################################################################################################
 
-model = SVR(C = grid_search.best_params_['C'])
-
+#model = SVR(C = grid_search.best_params_['C'])
+model = SVR(C = 10)
 
 # print('xx',type(x_train))
 # print('yy',type(y_train))
@@ -178,6 +180,7 @@ def choosing_stock(the_year, the_quarter):
 		print('x shape 2', len(x_choosing_stock))
 		print('x_choosing_stock', x_choosing_stock)
 
+		x_choosing_stock = np.array( x_choosing_stock )#####
 		x_choosing_stock_new = MinMax.transform(x_choosing_stock)
 		y_choosing_stock_predict = model.predict(x_choosing_stock_new)
 		x_choosing_stock = []
