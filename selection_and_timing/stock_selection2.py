@@ -39,6 +39,7 @@ df = pd.read_csv('stock_data.csv', converters={'code': '{:0>6}'.format}) #ts.get
 print ('公司数', df.shape[0],'/n指标数', df.shape[1])
 print ('1', df.shape)
 
+##################################################################################################################################
 def Drop_NA(tol_na, dataframe):
 	'''
 	如果一个指标超过N家公司都没有数据，就把该指标删除
@@ -49,13 +50,14 @@ def Drop_NA(tol_na, dataframe):
 	drop_list = list(df.isna().sum()[df.isna().sum() >= tol_na].index)
 	dataframe = dataframe.drop(drop_list, axis = 1)
 	return dataframe, drop_list
+##################################################################################################################################
 
-df, drop_list = Drop_NA(20, df)
+#df, drop_list = Drop_NA(20, df)
 
-df.dropna( axis=0, how='any', thresh=None, subset=None, inplace=True )
-print ('drop na后的shape', df.shape)
-df.sort_values( by="code" , ascending=True, inplace=True )
-df.drop_duplicates(['code','time_point'], inplace = True ) #根据code和time_point两个指标删除重复值
+#df.dropna( axis=0, how='any', thresh=None, subset=None, inplace=True )
+#print ('drop na后的shape', df.shape)
+#df.sort_values( by="code" , ascending=True, inplace=True )
+#df.drop_duplicates(['code','time_point'], inplace = True ) #根据code和time_point两个指标删除重复值
 print ('drop duplicates后的shape', df.shape)
 df['yield'] = np.nan
 print ('加了yield一个column后的shape', df.shape)
@@ -84,6 +86,7 @@ for row in range(0, temp_row):
 
 df.dropna( axis=0, how='any', thresh=None, subset=None, inplace=True ) #删除无数据的公司
 
+##################################################################################################################################
 def assert_allNumber(dataframe):
 	'''
 	判断dataframe里每列都是numeric data
@@ -100,6 +103,7 @@ def assert_allNumber(dataframe):
 			continue
 	dataframe = dataframe.drop(list_noNumber, axis= 1)
 	return dataframe
+##################################################################################################################################
 
 df = assert_allNumber(df)
 

@@ -62,7 +62,7 @@ def timing(stock_code, split_point):
 		x_new = MinMax.fit_transform(x)
 
 		x_train, x_test, y_train, y_test = train_test_split(x_new, y, test_size=0.25)
-		model = SVC(C = 1.0, kernel = 'rbf', class_weight = {0: 4.15, 1: 1, 2: 4.15})
+		model = SVC(C = 1.0, kernel = 'rbf', class_weight = {0: 5, 1: 1, 2: 5})
 		model.fit(x_train, y_train)
 		y_predict = model.predict(x_test)
 		print ('*****************************')
