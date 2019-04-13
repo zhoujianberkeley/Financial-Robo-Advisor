@@ -12,7 +12,7 @@ headers = {
     'User-Agent': random.choice(agents)
 }
 
-xueqiu_url = 'https://xueqiu.com/'  # 雪球官网
+xueqiu_url = 'https://xueqiu.com'  # 雪球官网
 comment_url = 'https://xueqiu.com/statuses/search.json?count=10&comment=0&symbol={symbol}&hl=0&source=user&sort=time&page={page}&_={real_time}'
 
 
@@ -100,6 +100,7 @@ def process_crawler():
         process.append(p)
         for p in process:
             p.join()
+
 
 
 if __name__ == '__main__':

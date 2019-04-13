@@ -15,7 +15,7 @@ headers={
     'User-Agent':random.choice(agents),
 }
 
-xueqiu_url='https://xueqiu.com/'#雪球官网
+xueqiu_url='https://xueqiu.com/S/SH600352'#雪球官网https://xueqiu.com 原来是https://xueqiu.com/
 stocks_url='https://xueqiu.com/stock/cata/stocklist.json?page={page}&size=90&order=desc&orderby=percent&type=11%2C12&_={real_time}'#股票列表网
 
 a=time.time()
@@ -56,6 +56,3 @@ if __name__ =='__main__':
 
     pool.close()
     pool.join()#必须等待所有子进程结束
-
-
-

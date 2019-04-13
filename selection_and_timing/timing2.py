@@ -1,14 +1,13 @@
 import tushare as ts 
 import pandas as pd 
-import numpy as np 
-from sklearn.model_selection import train_test_split
+import numpy as np
 from sklearn.preprocessing import MinMaxScaler
-import matplotlib.pyplot as plt 
-
-from sklearn.svm import SVC
-from sklearn.svm import SVR
-from sklearn.ensemble import RandomForestRegressor
 from sklearn.ensemble import AdaBoostRegressor
+
+import matplotlib.pyplot as plt
+import matplotlib
+matplotlib.rc('font', family='SimSun')  #用来正常显示中文标签
+plt.rcParams['axes.unicode_minus']=False  #用来正常显示负号
 
 from sklearn.decomposition import PCA
 
@@ -25,7 +24,7 @@ point = 0.02
 
 base_point = 1
 
-stock_list = ['000049', '000338', '000520', '000537', '000540', '000568', '000629', '000636', '000651', '000661']
+stock_list = ['000049', '000338', '000002', '000520', '000537', '000540', '000568', '000629', '000636', '000651', '000661']
 
 def timing(stock_code, split_point):
 	x_train = []
@@ -125,16 +124,42 @@ def timing(stock_code, split_point):
 		for i in range(1, time_length):
 			sum_test[i] = sum_test[i - 1] * (1 + y_test[i])
 			sum_predict[i] = sum_predict[i - 1] * (1 + y_predict[i])
-		
+
+
 		fig,ax = plt.subplots()
 		index = range(0, time_length)
 		plt.plot(index, sum_test, "x-", label = "test")
 		plt.plot(index, sum_predict, "+-", label = "predict")
-		plt.legend(bbox_to_anchor=(1.0, 1), loc=1, borderaxespad=0.)
+
+		# 画买入/卖出点和直线
+		pre_min = min(sum_predict)
+		pre_max = max(sum_predict)
+
+		minindex = np.where(sum_predict == pre_min)[0][0]
+		maxindex = np.where(sum_predict == pre_max)[0][0]
+
+		plt.axvline(x=minindex, c = 'r')
+		plt.axvline(x=maxindex, c='g')
+
+		#换买入点到卖出点的直线
+		if minindex < maxindex:
+			plt.plot([minindex, maxindex], [sum_test[minindex], sum_test[maxindex]], color='b', marker='o')
+			profit_prt = cal_percent(sum_test[minindex], sum_test[maxindex])
+			plt.title('股票:{3} 第{0}日买入，第{1}日卖出，回测收益率{2}'.format(minindex, maxindex, profit_prt, stock_code))
+		else:
+			plt.title('预测下跌，不推荐持仓')
+
+		#计算收益率
+
+
+		plt.legend(bbox_to_anchor=(0.23, 0.97), loc=1, borderaxespad=0.)
+
 		plt.show()
 
 
-
+def cal_percent(buy_price, sell_price):
+	percent = np.round(sell_price/buy_price - 1, 2)
+	return '{0:.0f}%'.format(percent*100)
 
 
 
