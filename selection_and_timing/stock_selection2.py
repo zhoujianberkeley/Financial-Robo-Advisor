@@ -1,4 +1,6 @@
-import tushare as ts 
+jian_import = 0  #如果是周健用，改为1，否则改为0
+
+import tushare as ts
 import pandas as pd 
 import numpy as np
 
@@ -9,8 +11,13 @@ from sklearn.model_selection import StratifiedKFold
 from sklearn.model_selection import GridSearchCV
 from sklearn.ensemble import RandomForestClassifier
 
-from adjust_start_date import Closest_TraDt_2
-from data_merge import get_temp_data
+if jian_import:
+	from selection_and_timing.adjust_start_date import Closest_TraDt_2
+	from selection_and_timing.data_merge import get_temp_data
+else:
+	from adjust_start_date import Closest_TraDt_2
+	from data_merge import get_temp_data
+
 
 Model_Rf = RandomForestClassifier()
 
