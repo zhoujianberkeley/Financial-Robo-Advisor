@@ -5,10 +5,11 @@
       <change afterPath="$PROJECT_DIR$/sentiment/load.py" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/sentiment/main.py" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/sentiment/predict.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sentiment" beforeDir="false" afterPath="$PROJECT_DIR$/sentiment" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sentiment/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sentiment/.ipynb_checkpoints/chinese_sentiment_analysis-checkpoint.ipynb" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/sentiment/README.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/sentiment/chinese_sentiment_analysis.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/sentiment/chinese_sentiment_analysis.ipynb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sentiment/chinese_sentiment_analysis.ipynb" beforeDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -81,8 +82,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/sentiment/main.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="344">
-              <caret line="36" column="29" lean-forward="true" selection-start-line="36" selection-start-column="29" selection-end-line="36" selection-end-column="29" />
+            <state relative-caret-position="224">
+              <caret line="28" column="32" lean-forward="true" selection-start-line="28" selection-start-column="32" selection-end-line="28" selection-end-column="32" />
             </state>
           </provider>
         </entry>
@@ -153,12 +154,13 @@
             <path>
               <item name="Difficult-Project" type="b2602c69:ProjectViewProjectNode" />
               <item name="Difficult-Project" type="462c0819:PsiDirectoryNode" />
-              <item name="selection_and_timing" type="462c0819:PsiDirectoryNode" />
+              <item name="sentiment" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="Difficult-Project" type="b2602c69:ProjectViewProjectNode" />
               <item name="Difficult-Project" type="462c0819:PsiDirectoryNode" />
               <item name="sentiment" type="462c0819:PsiDirectoryNode" />
+              <item name="data" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="Difficult-Project" type="b2602c69:ProjectViewProjectNode" />
@@ -343,14 +345,13 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1440" height="797" extended-state="0" />
-    <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.2639485" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.2639485" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32907802" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.49964765" visible="true" weight="0.35602838" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49964765" visible="true" weight="0.35602838" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -631,8 +632,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/sentiment/main.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="344">
-          <caret line="36" column="29" lean-forward="true" selection-start-line="36" selection-start-column="29" selection-end-line="36" selection-end-column="29" />
+        <state relative-caret-position="224">
+          <caret line="28" column="32" lean-forward="true" selection-start-line="28" selection-start-column="32" selection-end-line="28" selection-end-column="32" />
         </state>
       </provider>
     </entry>
