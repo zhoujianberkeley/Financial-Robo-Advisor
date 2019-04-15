@@ -24,7 +24,7 @@ point = 0.02
 
 base_point = 1
 
-stock_list = ['000049', '000338', '000002', '000520', '000537', '000540', '000568', '000629', '000636', '000651', '000661']
+stock_list = ['000001','000049', '000338', '000002', '000520', '000537', '000540', '000568', '000629', '000636', '000651', '000661']
 
 def timing(stock_code, split_point):
 	x_train = []
@@ -34,7 +34,7 @@ def timing(stock_code, split_point):
 	temp_x_test = []
 	y_test = []
 	df = ts.get_hist_data(stock_code)
-	print (df)
+	#print (df)
 	if df is None:
 		count_row = -2
 	else:
@@ -160,15 +160,6 @@ def timing(stock_code, split_point):
 def cal_percent(buy_price, sell_price):
 	percent = np.round(sell_price/buy_price - 1, 2)
 	return '{0:.0f}%'.format(percent*100)
-
-
-
-
-
-
-
-
-
 
 for i_stock in stock_list:
 	#code = '%06d' % i_stock 

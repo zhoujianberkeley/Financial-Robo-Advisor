@@ -12,8 +12,9 @@ headers = {
     'User-Agent': random.choice(agents)
 }
 
-xueqiu_url = 'https://xueqiu.com'  # 雪球官网
-comment_url = 'https://xueqiu.com/statuses/search.json?count=10&comment=0&symbol={symbol}&hl=0&source=user&sort=time&page={page}&_={real_time}'
+xueqiu_url = 'https://xueqiu.com/'  # 雪球官网
+comment_url = ' device_id=a9179d515c3e780cc6a8b5eb3bd8ce00; aliyungf_tc=AQAAALeYSTEAJw8ABufseHWeA6YPLZQ1; xq_a_token.sig=gGiB0IGXSeuhdiVqcjKBnjxWBNE; xq_r_token.sig=ILfaBwMDJJsRbIEHItnGAJQP668; _ga=GA1.2.1053275858.1555209319; _gid=GA1.2.1157779086.1555209319; Hm_lvt_1db88642e346389874251b5a1eded6e3=1555209320; s=f4122jq3kg; xq_a_token=a3727f42d4ab9333e7f76292e00e3fcff2d2e122; xqat=a3727f42d4ab9333e7f76292e00e3fcff2d2e122; xq_r_token=39f47e7f4e63fdff9e5f84df3aa6515c4a814387; xq_token_expire=Thu%20May%2009%202019%2010%3A35%3A35%20GMT%2B0800%20(CST); xq_is_login=1; u=6976897614; _gat=1; Hm_lpvt_1db88642e346389874251b5a1eded6e3=1555210190'
+    #'https://xueqiu.com/statuses/search.json?count=10&comment=0&symbol={symbol}&hl=0&source=user&sort=time&page={page}&_={real_time}' #原始url
 
 
 def get_comment():  # 默认是不使用dialing
