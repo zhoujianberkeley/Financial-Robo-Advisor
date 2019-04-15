@@ -30,6 +30,10 @@ def cal(data):
     data['sentiment'] = sentiments
     return data
 
+def select_news(i, data):
+    return data.loc[i - 1, 'content']
+
+
 #选取了一个好看的数据
 apr16 = extract('sina',2019,4,13).loc[[9,8,11,42,66,50,19,102,68],:]
 apr16.index = range(0, apr16.shape[0])
