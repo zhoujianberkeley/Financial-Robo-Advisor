@@ -1,7 +1,7 @@
 jian_import = 1  #如果是周健用，改为1，否则改为0
 
 import tushare as ts
-import pandas as pd 
+import pandas as pd
 import numpy as np
 
 from sklearn.svm import SVR
