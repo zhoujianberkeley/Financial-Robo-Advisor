@@ -161,9 +161,12 @@ def cal_percent(buy_price, sell_price):
 	percent = np.round(sell_price/buy_price - 1, 2)
 	return '{0:.0f}%'.format(percent*100)
 
-for i_stock in stock_list:
-	#code = '%06d' % i_stock 
-	#print (code)
-	timing(i_stock, 0)
+def timing_package(stock_list):
+	for i_stock in stock_list:
+		#code = '%06d' % i_stock 
+		#print (code)
+		timing(i_stock, 0)
 
 
+
+timing_package(stock_list)
