@@ -34,7 +34,6 @@ def timing(stock_code, split_point):
 	temp_x_test = []
 	y_test = []
 	df = ts.get_hist_data(stock_code)
-	#print (df)
 	if df is None:
 		count_row = -2
 	else:
@@ -42,14 +41,10 @@ def timing(stock_code, split_point):
 	if count_row > -2:
 		(count_row, count_col) = df.shape
 	if count_row > value_count_row:
-		#print (df)
-		#print (count_row)
 		base_point = df.iloc[count_row - 1, 2]
 		df['return'] = np.nan
 		for i in range(number_of_day_before, count_row):
 			df.iloc[i, 13] = (df.iloc[i - number_of_day_before, 2] - df.iloc[i, 2]) / df.iloc[i, 2]
-		#print (df)
-
 		'''
 		data = df[test_num : count_row]
 		print (data)
@@ -62,15 +57,7 @@ def timing(stock_code, split_point):
 			x_train.append(temp_x_train)
 			temp_x_train = []
 			y_train.append(df.iloc[i, count_col])
-		'''	
-		for i in range(0, len(y_train)):
-			if y_train[i] < -1 * point:
-				y_train[i] = -1
-			elif y_train[i] > point:
-				y_train[i] = 1
-			else:
-				y_train[i] = 0
-		'''
+
 		print (x_train)
 		MinMax = MinMaxScaler()
 		x_train = MinMax.fit_transform(x_train)
@@ -82,15 +69,7 @@ def timing(stock_code, split_point):
 			x_test.append(temp_x_test)
 			temp_x_test = []
 			y_test.append(df.iloc[i, count_col])
-		'''
-		for i in range(0, len(y_test)):
-			if y_test[i] < -1 * point:
-				y_test[i] = -1
-			elif y_test[i] > point:
-				y_test[i] = 1
-			else:
-				y_test[i] = 0
-		'''
+
 		x_test = MinMax.transform(x_test)
 		###################################################
 
@@ -169,4 +148,4 @@ def timing_package(stock_list):
 
 
 
-timing_package(stock_list)
+#timing_package(stock_list)

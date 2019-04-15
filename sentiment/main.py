@@ -1,4 +1,5 @@
 import sentiment.predict
+import sentiment.load
 
 #封装好的文件，请调用
 
@@ -8,7 +9,7 @@ import sentiment.predict
 
 
 #把训练好的模型加载出来
-sentiment.predict.loadModel()
+sentiment.load.loadModel()
 
 #画出一段时间内的情绪指数曲线
 def plot(source_list, start, period):
@@ -29,7 +30,7 @@ def cal(data):
     data['sentiment'] = sentiments
     return data
 
-
+#选取了一个好看的数据
 apr16 = extract('sina',2019,4,13).loc[[9,8,11,42,66,50,19,102,68],:]
 apr16.index = range(0, apr16.shape[0])
 apr16 = cal(apr16)

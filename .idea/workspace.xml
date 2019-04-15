@@ -2,14 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="5b9684ee-706f-4b77-ae6b-91fec18e9b0a" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/sentiment/load.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/sentiment/main.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/sentiment/predict.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sentiment" beforeDir="false" afterPath="$PROJECT_DIR$/sentiment" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sentiment/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/sentiment/.ipynb_checkpoints/chinese_sentiment_analysis-checkpoint.ipynb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/sentiment/README.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/sentiment/chinese_sentiment_analysis.ipynb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/selection_and_timing/stock_selection2.py" beforeDir="false" afterPath="$PROJECT_DIR$/selection_and_timing/stock_selection2.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/selection_and_timing/timing2.py" beforeDir="false" afterPath="$PROJECT_DIR$/selection_and_timing/timing2.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sentiment/load.py" beforeDir="false" afterPath="$PROJECT_DIR$/sentiment/load.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sentiment/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/sentiment/main.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sentiment/predict.py" beforeDir="false" afterPath="$PROJECT_DIR$/sentiment/predict.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -22,7 +21,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/snowball_crawling/crawl_xueqiu.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="377">
+            <state relative-caret-position="570">
               <caret line="38" column="103" selection-start-line="38" selection-start-column="103" selection-end-line="38" selection-end-column="103" />
               <folding>
                 <element signature="e#0#15#0" expanded="true" />
@@ -34,11 +33,21 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/selection_and_timing/timing2.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="243">
-              <caret line="26" column="24" selection-start-line="26" selection-start-column="24" selection-end-line="26" selection-end-column="24" />
+            <state relative-caret-position="169">
+              <caret line="51" lean-forward="true" selection-start-line="51" selection-end-line="51" />
               <folding>
                 <element signature="e#0#20#0" expanded="true" />
+                <element signature="e#1234#1292#1" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/selection_and_timing/stock_selection2.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="299">
+              <caret line="208" column="22" selection-start-line="208" selection-start-column="22" selection-end-line="208" selection-end-column="22" />
             </state>
           </provider>
         </entry>
@@ -46,7 +55,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/selection_and_timing/timing.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1095">
+            <state relative-caret-position="625">
               <caret line="73" selection-start-line="73" selection-end-line="73" />
               <folding>
                 <element signature="e#0#20#0" expanded="true" />
@@ -55,13 +64,13 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/sentiment/load.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="435">
-              <caret line="29" selection-start-line="29" selection-end-line="29" />
+            <state relative-caret-position="315">
+              <caret line="78" column="17" lean-forward="true" selection-start-line="78" selection-start-column="17" selection-end-line="78" selection-end-column="17" />
               <folding>
-                <element signature="e#17#39#0" expanded="true" />
+                <element signature="e#17#29#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -70,20 +79,23 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/sentiment/predict.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-1501">
-              <caret line="29" selection-start-line="29" selection-end-line="29" />
+            <state relative-caret-position="97">
+              <caret line="37" column="36" lean-forward="true" selection-start-line="37" selection-start-column="36" selection-end-line="37" selection-end-column="36" />
               <folding>
-                <element signature="e#17#39#0" expanded="true" />
+                <element signature="e#17#29#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/sentiment/main.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="224">
-              <caret line="28" column="32" lean-forward="true" selection-start-line="28" selection-start-column="32" selection-end-line="28" selection-end-column="32" />
+            <state relative-caret-position="134">
+              <caret line="15" selection-start-line="15" selection-end-line="15" />
+              <folding>
+                <element signature="e#0#24#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -115,20 +127,21 @@
         <option value="$PROJECT_DIR$/selection_and_timing/merge.py" />
         <option value="$PROJECT_DIR$/selection_and_timing/data_merge.py" />
         <option value="$PROJECT_DIR$/selection_and_timing/stock_selection.py" />
-        <option value="$PROJECT_DIR$/selection_and_timing/stock_selection2.py" />
         <option value="$PROJECT_DIR$/Chinese_sentiment_analysis/data/general.py" />
         <option value="$PROJECT_DIR$/Chinese_sentiment_analysis/general.py" />
         <option value="$PROJECT_DIR$/snowball_crawling/stock_queue.py" />
         <option value="$PROJECT_DIR$/snowball_crawling/crawl_xueqiu.py" />
-        <option value="$PROJECT_DIR$/selection_and_timing/timing2.py" />
         <option value="$PROJECT_DIR$/selection_and_timing/portfolio_construction.py" />
         <option value="$PROJECT_DIR$/Chinese_sentiment_analysis/sentiment_predict.py" />
         <option value="$PROJECT_DIR$/Chinese_sentiment_analysis/prediction.py" />
         <option value="$PROJECT_DIR$/Chinese_sentiment_analysis/load_sentiment_model.py" />
         <option value="$PROJECT_DIR$/Chinese_sentiment_analysis/sentiment_prediction.py" />
         <option value="$PROJECT_DIR$/sentiment/sentiment_prediction.py" />
-        <option value="$PROJECT_DIR$/sentiment/predict.py" />
+        <option value="$PROJECT_DIR$/selection_and_timing/timing2.py" />
+        <option value="$PROJECT_DIR$/selection_and_timing/stock_selection2.py" />
         <option value="$PROJECT_DIR$/sentiment/main.py" />
+        <option value="$PROJECT_DIR$/sentiment/predict.py" />
+        <option value="$PROJECT_DIR$/sentiment/load.py" />
       </list>
     </option>
   </component>
@@ -143,7 +156,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -154,29 +166,24 @@
             <path>
               <item name="Difficult-Project" type="b2602c69:ProjectViewProjectNode" />
               <item name="Difficult-Project" type="462c0819:PsiDirectoryNode" />
-              <item name="sentiment" type="462c0819:PsiDirectoryNode" />
+              <item name="selection_and_timing" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="Difficult-Project" type="b2602c69:ProjectViewProjectNode" />
               <item name="Difficult-Project" type="462c0819:PsiDirectoryNode" />
               <item name="sentiment" type="462c0819:PsiDirectoryNode" />
-              <item name="data" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Difficult-Project" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Difficult-Project" type="462c0819:PsiDirectoryNode" />
-              <item name="snowball_crawling" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
-    <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
+    <property name="settings.editor.selected.configurable" value="project.propVCSSupport.Mappings" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
@@ -283,7 +290,7 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="timing2" type="PythonConfigurationType" factoryName="Python" temporary="true">
+    <configuration name="stock_selection2" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="Difficult-Project" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -295,7 +302,7 @@
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/selection_and_timing/timing2.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/selection_and_timing/stock_selection2.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -305,19 +312,19 @@
       <method v="2" />
     </configuration>
     <list>
-      <item itemvalue="Python.timing2" />
       <item itemvalue="Python.portfolio_construction" />
       <item itemvalue="Python.load_sentiment_model" />
       <item itemvalue="Python.predict" />
       <item itemvalue="Python.main" />
+      <item itemvalue="Python.stock_selection2" />
     </list>
     <recent_temporary>
       <list>
         <item itemvalue="Python.main" />
+        <item itemvalue="Python.stock_selection2" />
         <item itemvalue="Python.predict" />
         <item itemvalue="Python.load_sentiment_model" />
         <item itemvalue="Python.portfolio_construction" />
-        <item itemvalue="Python.timing2" />
       </list>
     </recent_temporary>
   </component>
@@ -345,13 +352,14 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1440" height="797" extended-state="0" />
+    <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.2639485" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.2635659" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32907802" />
-      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49964765" visible="true" weight="0.35602838" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.49964765" visible="true" weight="0.35602838" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -385,6 +393,12 @@
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="right" x="0" y="0" width="310" height="597" id="Documentation" order="3" side_tool="true" weight="0.3590844" />
     </layout-to-restore>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <ignored-roots>
+      <path value="$PROJECT_DIR$/Chinese_sentiment_analysis" />
+      <path value="$PROJECT_DIR$/sentiment" />
+    </ignored-roots>
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -495,16 +509,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/selection_and_timing/stock_selection2.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="465">
-          <caret line="31" column="33" selection-start-line="31" selection-start-column="33" selection-end-line="31" selection-end-column="33" />
-          <folding>
-            <element signature="e#0#20#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/snowball_crawling/db.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="224">
@@ -515,35 +519,9 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/sentiment/chinese_sentiment_analysis.ipynb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-4963">
-          <caret selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/sentiment/chinese_sentiment_analysis.ipynb" />
     <entry file="file://$PROJECT_DIR$/launch.py">
       <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/snowball_crawling/crawl_xueqiu.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="377">
-          <caret line="38" column="103" selection-start-line="38" selection-start-column="103" selection-end-line="38" selection-end-column="103" />
-          <folding>
-            <element signature="e#0#15#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/selection_and_timing/timing.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1095">
-          <caret line="73" selection-start-line="73" selection-end-line="73" />
-          <folding>
-            <element signature="e#0#20#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/selection_and_timing/portfolio_construction.py">
       <provider selected="true" editor-type-id="text-editor">
@@ -555,26 +533,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/selection_and_timing/timing2.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="243">
-          <caret line="26" column="24" selection-start-line="26" selection-start-column="24" selection-end-line="26" selection-end-column="24" />
-          <folding>
-            <element signature="e#0#20#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/sentiment/general.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="310">
-          <caret line="24" column="35" selection-start-line="24" selection-start-column="35" selection-end-line="24" selection-end-column="35" />
-          <folding>
-            <element signature="e#16#38#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/sentiment/general.py" />
     <entry file="file://$PROJECT_DIR$/snowball_crawling/UA.py">
       <provider selected="true" editor-type-id="text-editor">
         <state>
@@ -602,38 +561,72 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/sentiment/load.py">
+    <entry file="file://$PROJECT_DIR$/sentiment/README.md" />
+    <entry file="file://$PROJECT_DIR$/snowball_crawling/crawl_xueqiu.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="435">
-          <caret line="29" selection-start-line="29" selection-end-line="29" />
+        <state relative-caret-position="570">
+          <caret line="38" column="103" selection-start-line="38" selection-start-column="103" selection-end-line="38" selection-end-column="103" />
           <folding>
-            <element signature="e#17#39#0" expanded="true" />
+            <element signature="e#0#15#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/sentiment/README.md">
-      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-        <state split_layout="SPLIT">
-          <first_editor />
-          <second_editor />
+    <entry file="file://$PROJECT_DIR$/selection_and_timing/timing2.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="169">
+          <caret line="51" lean-forward="true" selection-start-line="51" selection-end-line="51" />
+          <folding>
+            <element signature="e#0#20#0" expanded="true" />
+            <element signature="e#1234#1292#1" />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/sentiment/predict.py">
+    <entry file="file://$PROJECT_DIR$/selection_and_timing/stock_selection2.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1501">
-          <caret line="29" selection-start-line="29" selection-end-line="29" />
+        <state relative-caret-position="299">
+          <caret line="208" column="22" selection-start-line="208" selection-start-column="22" selection-end-line="208" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/selection_and_timing/timing.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="625">
+          <caret line="73" selection-start-line="73" selection-end-line="73" />
           <folding>
-            <element signature="e#17#39#0" expanded="true" />
+            <element signature="e#0#20#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/sentiment/main.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="224">
-          <caret line="28" column="32" lean-forward="true" selection-start-line="28" selection-start-column="32" selection-end-line="28" selection-end-column="32" />
+        <state relative-caret-position="134">
+          <caret line="15" selection-start-line="15" selection-end-line="15" />
+          <folding>
+            <element signature="e#0#24#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sentiment/predict.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="97">
+          <caret line="37" column="36" lean-forward="true" selection-start-line="37" selection-start-column="36" selection-end-line="37" selection-end-column="36" />
+          <folding>
+            <element signature="e#17#29#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sentiment/load.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="315">
+          <caret line="78" column="17" lean-forward="true" selection-start-line="78" selection-start-column="17" selection-end-line="78" selection-end-column="17" />
+          <folding>
+            <element signature="e#17#29#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

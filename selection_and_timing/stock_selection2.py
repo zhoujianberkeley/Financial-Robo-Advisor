@@ -1,4 +1,4 @@
-jian_import = 0  #如果是周健用，改为1，否则改为0
+jian_import = 1  #如果是周健用，改为1，否则改为0
 
 import tushare as ts
 import pandas as pd 
@@ -206,4 +206,4 @@ def choosing_stock(the_year, the_quarter):
 
 ##################################################################
 
-choosing_stock(2018, 1)
+choosing_stock(2018, 4)

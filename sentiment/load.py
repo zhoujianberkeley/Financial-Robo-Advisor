@@ -1,26 +1,15 @@
 # encoding utf-8
-from os import listdir
-from os.path import isfile, join
 import jieba
-import codecs
 from sentiment.langconv import * # convert Traditional Chinese characters to Simplified Chinese characters
 import pickle
-import random
 import numpy as np
-import scipy.stats as stats
-import pylab as pl
-import datetime
-import matplotlib.pyplot as plt
 
 
 from keras.models import Sequential
 from keras.layers.embeddings import Embedding
 from keras.layers.recurrent import GRU
-from keras.preprocessing.text import Tokenizer
 from keras.layers.core import Dense
-from keras.utils import to_categorical
 from keras.preprocessing.sequence import pad_sequences
-from keras.callbacks import TensorBoard
 
 #define useful function
 def __pickleStuff(filename, stuff):
@@ -64,33 +53,6 @@ def loadModel():
         model.summary()
     print("Model weights loaded!")
 
-
-def findFeatures(text):
-    text = Converter('zh-hans').convert(text)
-    text = text.replace("\n", "")
-    text = text.replace("\r", "")
-    seg_list = jieba.cut(text, cut_all=False)
-    seg_list = list(seg_list)
-    text = " ".join(seg_list)
-    textArray = [text]
-    input_tokenizer_load = __loadStuff("./data/input_tokenizer_chinese.p")
-    textArray = np.array(pad_sequences(input_tokenizer_load.texts_to_sequences(textArray), maxlen=maxLength))
-    return textArray
-
-
-def predictResult(text):
-    if model is None:
-        print("Please run \"loadModel\" first.")
-        return None
-    features = findFeatures(text)
-    predicted = model.predict(features)[0]  # we have only one sentence to predict, so take index 0
-    predicted = np.array(predicted)
-    probab = predicted.max()
-    predition = sentiment_tag[predicted.argmax()]
-    if predition == 'neg':
-        probab = -probab
-    return probab
-
 def findFeatures(text):
     text=Converter('zh-hans').convert(text)
     text = text.replace("\n", "")
@@ -102,6 +64,7 @@ def findFeatures(text):
     input_tokenizer_load = __loadStuff("./data/input_tokenizer_chinese.p")
     textArray = np.array(pad_sequences(input_tokenizer_load.texts_to_sequences(textArray), maxlen=maxLength))
     return textArray
+
 def predictResult(text):
     if model is None:
         print("Please run \"loadModel\" first.")
@@ -111,8 +74,7 @@ def predictResult(text):
     predicted = np.array(predicted)
     probab = predicted.max()
     predition = sentiment_tag[predicted.argmax()]
-    return predition, probab
-
-
-
+    if predition == 'neg':
+        probab = -probab
+    return probab
 #loadModel()
