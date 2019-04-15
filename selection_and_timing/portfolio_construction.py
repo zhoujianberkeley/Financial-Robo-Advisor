@@ -2,6 +2,7 @@ import pandas as pd
 import numpy as np
 import pandas_datareader.data as web
 import matplotlib.pyplot as plt
+import matplotlib.image as mpimg
 import pickle
 
 #调用的话  请运行： draw_efficient_frontier(stock_list, iterations, load_data)
@@ -24,7 +25,7 @@ stock_list = ('600000.SS',
 '600018.SS',
 '600019.SS',
 '600027.SS')
-
+rank = 3
 
 # download daily price data for each of the stocks in the portfolio
 def load_stock_data(stock_list, start, end):
@@ -75,9 +76,7 @@ def plot_function(data, iterations):
 
     # create scatter plot coloured by Sharpe Ratio
     plt.style.use('seaborn-dark')
-    # plt.scatter(results_frame.stdev,results_frame.ret, \
-    #             c=results_frame.sharpe,cmap='RdYlBu')
-    # plt.colorbar()
+
     results_frame.plot.scatter(x='Volatility', y='Returns', c='Sharpe Ratio',
                                cmap='RdYlGn', edgecolors='black', figsize=(15, 8), grid=True)
 
@@ -87,26 +86,80 @@ def plot_function(data, iterations):
 
     # use the min, max values to locate and create the two special portfolios
     sharpe_portfolio = results_frame.loc[results_frame['Sharpe Ratio'] == max_sharpe]
-    min_variance_port = results_frame.loc[results_frame['Volatility'] == min_volatility]
+    minvar_portfolio = results_frame.loc[results_frame['Volatility'] == min_volatility]
 
     plt.scatter(x=sharpe_portfolio['Volatility'], y=sharpe_portfolio['Returns'], c='red', marker='D', s=200)
-    plt.scatter(x=min_variance_port['Volatility'], y=min_variance_port['Returns'], c='blue', marker='D', s=200)
+    plt.scatter(x=minvar_portfolio['Volatility'], y=minvar_portfolio['Returns'], c='blue', marker='D', s=200)
 
     plt.title('Efficient Frontier')
     plt.ylabel('Expected Returns')
     plt.xlabel('Volatility (Std. Deviation)')
+    return results_frame
+
+
+def rank_point(data, rank):
+    min_volatility = data['Volatility'].min()
+    max_sharpe = data['Sharpe Ratio'].max()
+
+    # use the min, max values to locate and create the two special portfolios
+    sharpe_portfolio = data.loc[data['Sharpe Ratio'] == max_sharpe]
+    minvar_portfolio = data.loc[data['Volatility'] == min_volatility]
+
+    sharpe_vol = sharpe_portfolio['Volatility'].values[0]
+    min_vol = minvar_portfolio['Volatility'].values[0]
+    vol_dif = (sharpe_vol - min_vol) / 5
+
+    vol = vol_dif * rank + min_volatility
+
+    rank_point = data[data['Volatility'] < vol].sort_values(by='Sharpe Ratio', ascending=False)
+    return rank_point.iloc[0, :]
+
+def plot_Point(point):
+    plt.scatter(x=point['Volatility'], y=point['Returns'], c='orange', marker='D', s=200)
+
+
+def load_data_func(stock_list, load_data):
+    if load_data:
+        print('loading data')
+        data = load_stock_data(stock_list, start, end)
+    else:
+        data = pickle.load(open("yahoo.pkl", "rb"))
+    return data
+
+
+def draw_norank(stock_list, iterations, load_data=False):
+    '''
+    画没有rank的ef
+    :param stock_list:
+    :param iterations:
+    :param load_data:
+    :return:
+    '''
+    data = load_data_func(stock_list, load_data)
+    plot_function(data, iterations)
+
     plt.show()
-    plt.savefig('有效前沿.jpg')
     plt.close()
 
 
-def draw_efficient_frontier(stock_list, iterations, load_data=False):
+def draw_rank(stock_list, iterations, rank, load_data=False):
     if load_data:
         print('loading data')
         data = load_stock_data(stock_list, start, end)
     else:
         data = pickle.load(open("yahoo.pkl", "rb"))
 
-    plot_function(data, iterations)
+    result_frame = plot_function(data, iterations)
+    point = rank_point(result_frame, rank)
+    plot_Point(point)
 
-draw_efficient_frontier(stock_list, iterations, load_data)
+    plt.show()
+    plt.close()
+
+
+
+
+
+draw_norank(stock_list, iterations, load_data)
+draw_rank(stock_list, iterations, rank, load_data)
+
