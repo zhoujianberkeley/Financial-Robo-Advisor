@@ -1,2 +1,4 @@
 #ignore data in sentiment analysis
-Chinese_sentiment_analysis/data/
+sentiment/data/
+*.HDF5
+*.txt
