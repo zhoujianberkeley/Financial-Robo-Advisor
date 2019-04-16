@@ -15,6 +15,7 @@ from sklearn.decomposition import PCA
 pd.set_option('display.max_columns', None)
 
 def data_merge_package():
+	print('load stock selection model sucessfully')
 	get_data = 1
 
 	row = -1
@@ -22,20 +23,19 @@ def data_merge_package():
 
 	def get_temp_data(year, quarter):
 		df1 = ts.get_report_data(year, quarter)
-		print (1,"\n", df1)
+		#print (1)
 		df1 = df1.merge(ts.get_profit_data(year, quarter), how = 'inner', on = ['code', 'name'])
-		print (2,"\n", df1)
+		#print (2)
 		df1 = df1.merge(ts.get_operation_data(year, quarter), how = 'inner', on = ['code', 'name'])
-		print (3, "n", df1)
+		#print (3, "n", df1)
 		df1 = df1.merge(ts.get_growth_data(year, quarter), how = 'inner', on = ['code', 'name'])
-		print (4)
+		#print (4)
 		print (df1)
 		df1 = df1.merge(ts.get_debtpaying_data(year, quarter), how = 'inner', on = ['code', 'name'])
-		print (5)
+		#print (5)
 		print (df1)
 		df1 = df1.merge(ts.get_cashflow_data(year, quarter), how = 'inner', on = ['code', 'name'])
-		print (6)
-		print (df1)
+		#print (6)
 		( row, col ) = df1.shape
 		for i in range(0, row):
 			df1.iloc[i, 0] = str( df1.iloc[i, 0] )
@@ -45,8 +45,8 @@ def data_merge_package():
 		count = 0
 		for i in range(2018, 2019):
 			for j in range(3, 4):
-				print (i)
-				print (j)
+				#print (i)
+				#print (j)
 				if count == 0:
 					df2 = get_temp_data(i, j)
 					df2['time_point'] = Closest_TraDt(i, j)
@@ -57,11 +57,9 @@ def data_merge_package():
 
 				count += 1
 
-		print (df2)
 		df2.drop_duplicates(subset=['code', 'name'], keep='first', inplace=True)
 		df2.sort_values( by="code" , ascending=True, inplace=True )
-		rows = 0
-		cols = 0
+
 		( rows, cols ) = df2.shape
 		for j in range(0, rows):
 			df2.iloc[j, 0] = str( df2.iloc[j, 0] )
@@ -73,7 +71,6 @@ def data_merge_package():
 		for k in range(0, rows):
 			if ( (df2.iloc[k, 3] > 20) and (df2.iloc[k, 4] > 15) ):
 				stock_list.append(df2.iloc[k, 0])
-		print (stock_list)
 		return stock_list
 
 count_row = -1
@@ -86,8 +83,6 @@ number_of_day_before = 1
 point = 0.02
 
 base_point = 1
-
-stock_list = data_merge_package()
 
 def timing(stock_code, split_point):
 	x_train = []
@@ -108,10 +103,7 @@ def timing(stock_code, split_point):
 		df['return'] = np.nan
 		for i in range(number_of_day_before, count_row):
 			df.iloc[i, 13] = (df.iloc[i - number_of_day_before, 2] - df.iloc[i, 2]) / df.iloc[i, 2]
-		'''
-		data = df[test_num : count_row]
-		print (data)
-		'''
+
 
 		###################################################
 		for i in range(count_row - 1, test_num - 1, -1):
@@ -121,7 +113,7 @@ def timing(stock_code, split_point):
 			temp_x_train = []
 			y_train.append(df.iloc[i, count_col])
 
-		print (x_train)
+		#print (x_train)
 		MinMax = MinMaxScaler()
 		x_train = MinMax.fit_transform(x_train)
 
@@ -153,10 +145,10 @@ def timing(stock_code, split_point):
 		y_predict = model.predict(x_test)
 		print ('*****************************')
 		print (stock_code)
-		print ('y_test')
-		print (y_test)
-		print ('y_predict')
-		print (y_predict)
+		# print ('y_test')
+		# print (y_test)
+		# print ('y_predict')
+		# print (y_predict)
 
 		time_length = len(y_test)
 		sum_test = np.zeros(time_length)
@@ -189,15 +181,13 @@ def timing(stock_code, split_point):
 			profit_prt = cal_percent(sum_test[minindex], sum_test[maxindex])
 			plt.title('股票:{3} 第{0}日买入，第{1}日卖出，回测收益率{2}'.format(minindex, maxindex, profit_prt, stock_code))
 		else:
-			plt.title('预测下跌，不推荐持仓')
+			plt.title('股评:{0} 预测下跌，不推荐持仓'.format(stock_code))
 
 		#计算收益率
-
 
 		plt.legend(bbox_to_anchor=(0.23, 0.97), loc=1, borderaxespad=0.)
 
 		plt.show()
-
 
 def cal_percent(buy_price, sell_price):
 	percent = np.round(sell_price/buy_price - 1, 2)
@@ -205,9 +195,11 @@ def cal_percent(buy_price, sell_price):
 
 def timing_package(stock_list):
 	for i_stock in stock_list:
-		#code = '%06d' % i_stock 
-		#print (code)
 		timing(i_stock, 0)
+
+
+stock_list = data_merge_package()
+print("选股结果 : ", stock_list)
 
 timing_package(stock_list)
 

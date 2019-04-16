@@ -2,30 +2,11 @@ import pandas as pd
 import numpy as np
 import pandas_datareader.data as web
 import matplotlib.pyplot as plt
-import matplotlib.image as mpimg
 import pickle
 
 #调用的话  请运行： draw_efficient_frontier(stock_list, iterations, load_data)
 
-#设定各种参数
 risk_free_rate=0.03102
-iterations = 10000
-load_data = False
-
-start = '2009-01-01'
-end = '2019-03-01'
-#list of stocks in portfolio
-stock_list = ('600000.SS',
-'600004.SS',
-'600009.SS',
-'600010.SS',
-'600011.SS',
-'600015.SS',
-'600016.SS',
-'600018.SS',
-'600019.SS',
-'600027.SS')
-rank = 3
 
 # download daily price data for each of the stocks in the portfolio
 def load_stock_data(stock_list, start, end):
@@ -118,36 +99,35 @@ def plot_Point(point):
     plt.scatter(x=point['Volatility'], y=point['Returns'], c='orange', marker='D', s=200)
 
 
-def load_data_func(stock_list, load_data):
+def load_data_func(stock_list, load_data, start, end):
     if load_data:
         print('loading data')
         data = load_stock_data(stock_list, start, end)
     else:
-        data = pickle.load(open("yahoo.pkl", "rb"))
+        data = pickle.load(open("../yahoo.pkl", "rb"))
     return data
 
 
-def draw_norank(stock_list, iterations, load_data=False):
+def draw_norank(stock_list, iterations, load_data=False, start = None, end = None):
     '''
     画没有rank的ef
-    :param stock_list:
-    :param iterations:
-    :param load_data:
-    :return:
     '''
-    data = load_data_func(stock_list, load_data)
+    data = load_data_func(stock_list, load_data, start, end)
     plot_function(data, iterations)
 
     plt.show()
     plt.close()
 
 
-def draw_rank(stock_list, iterations, rank, load_data=False):
+def draw_rank(stock_list, iterations, rank, load_data=False, start = None, end = None):
+    '''
+    画有用户等级rank的有效前沿
+    '''
     if load_data:
         print('loading data')
         data = load_stock_data(stock_list, start, end)
     else:
-        data = pickle.load(open("yahoo.pkl", "rb"))
+        data = pickle.load(open("../yahoo.pkl", "rb"))
 
     result_frame = plot_function(data, iterations)
     point = rank_point(result_frame, rank)
@@ -155,11 +135,3 @@ def draw_rank(stock_list, iterations, rank, load_data=False):
 
     plt.show()
     plt.close()
-
-
-
-
-
-draw_norank(stock_list, iterations, load_data)
-draw_rank(stock_list, iterations, rank, load_data)
-
