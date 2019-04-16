@@ -19,7 +19,8 @@ from keras.callbacks import TensorBoard
 
 
 # 设定调取tushare api的token
-pro = ts.pro_api('a267cd47f74302b6be5d5d5a1ccbeba29b92620482619bd108a03ee2')
+pro = ts.pro_api('3e1bc7304a72d89ecaf3ce27d1f15fc04d19da1c62edafb34cbac17d')
+# 周健的token 'a267cd47f74302b6be5d5d5a1ccbeba29b92620482619bd108a03ee2'
 
 # load model
 model = None

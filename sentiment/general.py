@@ -20,10 +20,6 @@ def plot(source_list, start, period):
     sentiment.predict.plot_sentiment(source, start, period)
     return
 
-# source = ['新浪']
-# plot(source, '20190404', 3)
-
-
 
 #计算某日的每条新闻的情绪
 def cal(data):
@@ -40,6 +36,10 @@ def extract(source, year, month, date):
 
 def select_news(i, data):
     return data.loc[i - 1, 'content']
+
+#测试用： uncomment下面的代码， 如果要跑的话
+# source = ['新浪']
+# plot(source, '20190404', 3)
 
 # #选取了一个好看的数据
 # apr16 = extract('新浪',2019,4,13).loc[[9,8,11,42,66,50,19,102,68],:]
