@@ -201,5 +201,5 @@ def timing_package(stock_list):
 stock_list = data_merge_package()
 print("选股结果 : ", stock_list)
 
-timing_package(stock_list)
+#timing_package(stock_list)
 

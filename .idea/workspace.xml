@@ -2,15 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="5b9684ee-706f-4b77-ae6b-91fec18e9b0a" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/portfolio_construction/main.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/selection_and_timing/adjust_start_date.py" beforeDir="false" afterPath="$PROJECT_DIR$/selection_and_timing/adjust_start_date.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/selection_and_timing/portfolio_construction.py" beforeDir="false" afterPath="$PROJECT_DIR$/portfolio_construction/construct.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/selection_and_timing/selection&amp;timing2.py" beforeDir="false" afterPath="$PROJECT_DIR$/selection_and_timing/selection&amp;timing2.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/selection_and_timing/stock_data_new.csv" beforeDir="false" afterPath="$PROJECT_DIR$/selection_and_timing/stock_data_new.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/lib/python3.5/site-packages/pip-10.0.1-py3.5.egg/pip/_internal/req/req_uninstall.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv/lib/python3.5/site-packages/pip-10.0.1-py3.5.egg/pip/_internal/req/req_uninstall.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/lib/python3.5/site-packages/pip-10.0.1-py3.5.egg/pip/_internal/utils/misc.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv/lib/python3.5/site-packages/pip-10.0.1-py3.5.egg/pip/_internal/utils/misc.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/lib/python3.5/site-packages/pip-10.0.1-py3.5.egg/pip/_vendor/urllib3/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv/lib/python3.5/site-packages/pip-10.0.1-py3.5.egg/pip/_vendor/urllib3/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sentiment/general.py" beforeDir="false" afterPath="$PROJECT_DIR$/sentiment/general.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -53,13 +47,16 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/selection_and_timing/selection&amp;timing2.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="239">
-              <caret line="200" column="33" lean-forward="true" selection-start-line="200" selection-start-column="13" selection-end-line="200" selection-end-column="33" />
+            <state relative-caret-position="-156">
+              <caret line="155" column="50" lean-forward="true" selection-start-line="155" selection-start-column="50" selection-end-line="155" selection-end-column="50" />
               <folding>
                 <element signature="e#0#19#0" expanded="true" />
+                <element signature="e#466#2720#0" />
+                <element signature="e#5938#6024#0" />
+                <element signature="e#6059#6106#0" />
               </folding>
             </state>
           </provider>
@@ -80,8 +77,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/sentiment/predict.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="856">
-              <caret line="106" column="7" lean-forward="true" selection-start-line="106" selection-end-line="107" />
+            <state relative-caret-position="226">
+              <caret line="118" column="29" selection-start-line="118" selection-start-column="18" selection-end-line="118" selection-end-column="29" />
               <folding>
                 <element signature="e#17#29#0" expanded="true" />
               </folding>
@@ -89,11 +86,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/sentiment/general.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="165">
-              <caret line="11" column="26" lean-forward="true" selection-start-line="11" selection-start-column="26" selection-end-line="11" selection-end-column="26" />
+            <state relative-caret-position="421">
+              <caret line="43" column="13" lean-forward="true" selection-start-line="43" selection-start-column="13" selection-end-line="43" selection-end-column="13" />
               <folding>
                 <element signature="e#0#24#0" expanded="true" />
               </folding>
@@ -143,13 +140,14 @@
         <option value="$PROJECT_DIR$/selection_and_timing/stock_selection2.py" />
         <option value="$PROJECT_DIR$/sentiment/main.py" />
         <option value="$PROJECT_DIR$/selection_and_timing/adjust_start_date.py" />
-        <option value="$PROJECT_DIR$/selection_and_timing/selection&amp;timing2.py" />
         <option value="$PROJECT_DIR$/selection_and_timing/portfolio_construction.py" />
         <option value="$PROJECT_DIR$/portfolio_construction/portfolio_construction.py" />
         <option value="$PROJECT_DIR$/portfolio_construction/diaoyong.py" />
         <option value="$PROJECT_DIR$/portfolio_construction/construct.py" />
         <option value="$PROJECT_DIR$/portfolio_construction/__init__.py" />
         <option value="$PROJECT_DIR$/portfolio_construction/main.py" />
+        <option value="$PROJECT_DIR$/selection_and_timing/selection&amp;timing2.py" />
+        <option value="$PROJECT_DIR$/sentiment/general.py" />
       </list>
     </option>
   </component>
@@ -174,12 +172,7 @@
             <path>
               <item name="Difficult-Project" type="b2602c69:ProjectViewProjectNode" />
               <item name="Difficult-Project" type="462c0819:PsiDirectoryNode" />
-              <item name="portfolio_construction" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Difficult-Project" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Difficult-Project" type="462c0819:PsiDirectoryNode" />
-              <item name="selection_and_timing" type="462c0819:PsiDirectoryNode" />
+              <item name="sentiment" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -214,7 +207,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python.__init__">
+  <component name="RunManager" selected="Python.main">
     <configuration name="__init__" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="Difficult-Project" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -329,9 +322,9 @@
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Python.__init__" />
         <item itemvalue="Python.main" />
         <item itemvalue="Python.selection&amp;timing2" />
+        <item itemvalue="Python.__init__" />
         <item itemvalue="Python.data_merge2" />
         <item itemvalue="Python.portfolio_construction" />
       </list>
@@ -362,12 +355,12 @@
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1440" height="797" extended-state="0" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.2635659" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.2635659" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32907802" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.49964765" visible="true" weight="0.35602838" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49964765" visible="true" weight="0.35602838" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -582,16 +575,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/sentiment/predict.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="856">
-          <caret line="106" column="7" lean-forward="true" selection-start-line="106" selection-end-line="107" />
-          <folding>
-            <element signature="e#17#29#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/selection_and_timing/adjust_start_date.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="314">
@@ -601,16 +584,6 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/selection_and_timing/porfolio_construction/__init__.py">
       <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/sentiment/general.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="165">
-          <caret line="11" column="26" lean-forward="true" selection-start-line="11" selection-start-column="26" selection-end-line="11" selection-end-column="26" />
-          <folding>
-            <element signature="e#0#24#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/selection_and_timing/__init__.py">
       <provider selected="true" editor-type-id="text-editor" />
@@ -664,10 +637,33 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/selection_and_timing/selection&amp;timing2.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="239">
-          <caret line="200" column="33" lean-forward="true" selection-start-line="200" selection-start-column="13" selection-end-line="200" selection-end-column="33" />
+        <state relative-caret-position="-156">
+          <caret line="155" column="50" lean-forward="true" selection-start-line="155" selection-start-column="50" selection-end-line="155" selection-end-column="50" />
           <folding>
             <element signature="e#0#19#0" expanded="true" />
+            <element signature="e#466#2720#0" />
+            <element signature="e#5938#6024#0" />
+            <element signature="e#6059#6106#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sentiment/predict.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="226">
+          <caret line="118" column="29" selection-start-line="118" selection-start-column="18" selection-end-line="118" selection-end-column="29" />
+          <folding>
+            <element signature="e#17#29#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sentiment/general.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="421">
+          <caret line="43" column="13" lean-forward="true" selection-start-line="43" selection-start-column="13" selection-end-line="43" selection-end-column="13" />
+          <folding>
+            <element signature="e#0#24#0" expanded="true" />
           </folding>
         </state>
       </provider>
