@@ -90,9 +90,10 @@ def load_news_data(source, year, month, start, period, top_n=10):
 
 
 def visual(time, y_list, y_label):
+    plt.figure(figsize=(10, 8))
     for y, label in zip(y_list, y_label):
         plt.plot(time, y, label=label)
-    plt.xticks(rotation=45, fontsize=8)
+    plt.xticks(rotation=30, fontsize=8)
     plt.axhline(y=0, c='black')
     plt.axhline(y=0.3, c='r', linestyle='--')
     plt.axhline(y=-0.3, c='g', linestyle='--')

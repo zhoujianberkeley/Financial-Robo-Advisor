@@ -22,17 +22,18 @@ rank = 4
 
 
 def first_run(stock_list, iterations, load_data = False, start = None, end = None):
-    pc.draw_norank(stock_list, iterations, load_data)
+    pc.draw_norank(stock_list, iterations, load_data, start = start, end = end)
 
 
 def second_run(stock_list, iterations, rank):
-    pc.draw_rank(stock_list, iterations, rank, load_data)
+    pc.draw_rank(stock_list, iterations, rank)
+
+
+second_run(stock_list, iterations = 10000, rank = 4)
 
 test = 0
 if test:
-    # first_run(stock_list, iterations, False)
-    #
-    # first_run(stock_list, iterations, True, start, end)
+    first_run(stock_list, iterations = 1000, load_data = True, start = '2014-01-01', end = '2019-03-01')
 
     second_run(stock_list, iterations, rank)
 

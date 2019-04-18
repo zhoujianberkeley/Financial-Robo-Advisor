@@ -29,21 +29,26 @@ def cal(data):
 
 #提取某日的新闻数据
 def extract(source, year, month, date):
-    source = [source_dic[source]]
+    source = source_dic[source]
     news_data = sentiment.predict.load_daily_news(source, year, month, date)
     data = cal(news_data)
+    data.index = range(1, data.shape[0] + 1)
     return data
 
 def select_news(i, data):
     return data.loc[i - 1, 'content']
 
-#测试用： uncomment下面的代码， 如果要跑的话
-# source = ['新浪']
-# plot(source, '20190404', 3)
 
-# #选取了一个好看的数据
-# apr16 = extract('新浪',2019,4,13).loc[[9,8,11,42,66,50,19,102,68],:]
+
+#测试用： uncomment下面的代码， 如果要跑的话
+# source = ['同花顺']
+# plot(source, '20190204', 20)
+
+
+# # #选取了一个好看的数据
+apr16 = extract('同花顺',2019,4,10).sort_values(by='sentiment',ascending=False).iloc[:10,:]
+apr16.to_excel('output/同花顺.xlsx')
 # apr16.index = range(0, apr16.shape[0])
-# apr16 = cal(apr16)
-# print(apr16)
-# print(apr16.loc[0,'content'])
+# # apr16 = cal(apr16)
+# # print(apr16)
+# # print(apr16.loc[0,'content'])

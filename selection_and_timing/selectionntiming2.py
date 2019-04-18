@@ -187,7 +187,7 @@ def timing(stock_code, split_point):
 
 		plt.legend(bbox_to_anchor=(0.23, 0.97), loc=1, borderaxespad=0.)
 
-		plt.show()
+		plt.savefig("./pic/" + stock_code + ".jpg")
 
 def cal_percent(buy_price, sell_price):
 	percent = np.round(sell_price/buy_price - 1, 2)
@@ -201,6 +201,7 @@ def timing_package(stock_list):
 # stock_list = data_merge_package()
 # print("选股结果 : ", stock_list)
 
-stock_list = ['000786', '000537', '002120', '002415', '000049', '002626']
+stock_list = ["002626", "000786", "000537", "002120", "002415", "000049", "000930", "002803", "300003"]
+
 timing_package(stock_list)
 
